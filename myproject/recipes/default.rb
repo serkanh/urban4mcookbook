@@ -27,18 +27,18 @@ include_recipe 'python'
 #include_recipe 'vim'
 
 
-python_virtualenv "/home/vagrant/urban4menv" do
+python_virtualenv "/home/urban4m/urban4menv" do
   interpreter "python2.7"
-  owner "vagrant"
-  group "vagrant"
+  owner "urban4m"
+  group "urban4m"
   action :create
 end
 
 
 
 directory "/usr/local/mysource" do
-  owner "vagrant"
-  group "vagrant"
+  owner "urban4m"
+  group "urban4m"
   mode 0755
   action :create
 end
@@ -53,7 +53,7 @@ end
 
 
 python_pip "/usr/local/mysource/django" do
-  virtualenv "/home/vagrant/urban4menv"
+  virtualenv "/home/urban4m/urban4menv"
   options '-e'
 end
 
