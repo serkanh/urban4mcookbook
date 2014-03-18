@@ -8,20 +8,20 @@
 #
 
 
-include_recipe 'build-essential'
-include_recipe 'chef_handler'
-#include_recipe 'git'
-include_recipe 'dmg'
-include_recipe 'python'
-
-
-#create virtualenv
-python_virtualenv "/home/urban4m/urban4menv" do
-  interpreter "python2.7"
-  owner "urban4m"
-  group "urban4m"
-  action :create
-end
+#include_recipe 'build-essential'
+#include_recipe 'chef_handler'
+##include_recipe 'git'
+#include_recipe 'dmg'
+#include_recipe 'python'
+#
+#
+##create virtualenv
+#python_virtualenv "/home/urban4m/urban4menv" do
+#  interpreter "python2.7"
+#  owner "urban4m"
+#  group "urban4m"
+#  action :create
+#end
 
 
 #create source directory to download application repo.
