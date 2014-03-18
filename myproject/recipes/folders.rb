@@ -9,8 +9,8 @@ directory "/usr/local/mysource" do
 end
 
 #clone application to directory
-git "/usr/local/mysource/urbanpy" do
-  repository "ssh://git@54.84.1.39/git/urban/urbanpy"
+git "/usr/local/mysource/django" do
+  repository "https://github.com/django/django.git"
   revision "master"
   action :sync
 end
