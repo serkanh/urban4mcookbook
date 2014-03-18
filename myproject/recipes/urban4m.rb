@@ -1,3 +1,4 @@
+#create user and set home folder
 user "urban4m" do
   shell "/bin/bash"
   home "/home/urban4m"
