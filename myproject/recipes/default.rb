@@ -41,8 +41,8 @@
 #end
 
 #install application.
-python_pip "/usr/local/mysource/django" do
-  virtualenv "/home/urban4m/urban4menv"
-  options '-e'
-end
+#python_pip "/usr/local/mysource/django" do
+#  virtualenv "/home/urban4m/urban4menv"
+#  options '-e'
+#end
 
