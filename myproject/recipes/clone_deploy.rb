@@ -13,9 +13,10 @@ end
 
 #clone application to directory
 git "/usr/local/urbanpy" do
-  repository "ssh://git@git.urban4m.com:7999/urban/urbanpy.git"
+  repository "http://serkan@git.urban4m.com/scm/urban/urbanpy.git"
   revision "master"
   action :sync
+  user "urban4m"
 end
 
 
@@ -29,7 +30,7 @@ python_virtualenv "/home/urban4m/urban4menv" do
 end
 
 
-install application.
+#install application.
 python_pip "/usr/local/urbanpy" do
   virtualenv "/home/urban4m/urban4menv"
   options '-e'
