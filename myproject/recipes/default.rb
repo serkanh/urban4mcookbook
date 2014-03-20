@@ -15,34 +15,16 @@ include_recipe 'dmg'
 include_recipe 'python'
 
 #create urban4m user
-user "urban4m" do
-  shell "/bin/bash"
-  home "/home/urban4m"
-  comment "Urban4M"
-  supports :manage_home=>true
-  action :create
-end
-
-#create ssh dir for urban4m
-directory "/home/urban4m/.ssh" do
-  owner "urban4m"
-  group "urban4m"
-  mode 0755
-  action :create
-end
-
-
-##create virtualenv
-#python_virtualenv "/home/urban4m/urban4menv" do
-#  interpreter "python2.7"
-#  owner "urban4m"
-#  group "urban4m"
+#user "urban4m" do
+#  shell "/bin/bash"
+#  home "/home/urban4m"
+#  comment "Urban4M"
+#  supports :manage_home=>true
 #  action :create
 #end
 
-
-#create source directory to download application repo.
-#directory "/usr/local/mysource" do
+#create ssh dir for urban4m
+#directory "/home/urban4m/.ssh" do
 #  owner "urban4m"
 #  group "urban4m"
 #  mode 0755
@@ -52,18 +34,7 @@ end
 
 
 
-#clone application to directory
-#git "/usr/local/mysource/django" do
-#  repository "https://github.com/django/django"
-#  revision "master"
-#  action :sync
-#end
 
 
 
-#install application.
-#python_pip "/usr/local/mysource/django" do
-#  virtualenv "/home/urban4m/urban4menv"
-#  options '-e'
-#end
 

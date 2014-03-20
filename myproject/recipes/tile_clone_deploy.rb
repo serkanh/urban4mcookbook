@@ -3,7 +3,7 @@ include_recipe 'python'
 
 
 
-
+#run pull app on the server
 bash "run_pull"  do
   user "urban4m"
   code <<-EOH
@@ -16,6 +16,18 @@ python_pip "/home/urban4m/deploy/urbanpy" do
   virtualenv "/home/venv-tiler"
   options '-e'
 end
+
+
+#run pull app on the server
+bash "smartmap_restart"  do
+  user "ubuntu"
+  code <<-EOH
+  bash service smartmap_tiler restart
+  EOH
+end
+
+
+
 
 
 
