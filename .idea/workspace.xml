@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9a81aef-f070-48a1-82bb-e737f51f9831" name="Default" comment="" />
+    <list default="true" id="a9a81aef-f070-48a1-82bb-e737f51f9831" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urban4m-tiler/recipes/clone_deploy.rb" afterPath="$PROJECT_DIR$/urban4m-tiler/recipes/clone_deploy.rb" />
+    </list>
     <ignored path="mycookbooks2.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,73 +24,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="metadata.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myproject/metadata.rb">
+      <file leaf-file-name="default.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modvagrant/recipes/default.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="432">
+            <state line="18" column="33" selection-start="357" selection-end="357" vertical-scroll-proportion="-12.96" vertical-offset="0" max-vertical-offset="738">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="default.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myproject/recipes/default.rb">
+        <entry file="file://$PROJECT_DIR$/urban4m-tiler/recipes/default.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="1" selection-start="561" selection-end="561" vertical-scroll-proportion="-19.28" vertical-offset="76" max-vertical-offset="828">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="828">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="virtualenv.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myproject/recipes/virtualenv.rb">
+      <file leaf-file-name="clone_deploy.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/urban4m-tiler/recipes/clone_deploy.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="504">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urban4m.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myproject/recipes/urban4m.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="164" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="252">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="default.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/modvagrant/recipes/default.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="33" selection-start="357" selection-end="357" vertical-scroll-proportion="0.44566712" vertical-offset="0" max-vertical-offset="738">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="folders.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myproject/recipes/folders.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="31" selection-start="245" selection-end="245" vertical-scroll-proportion="-7.92" vertical-offset="0" max-vertical-offset="414">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="clone_deploy.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myproject/recipes/clone_deploy.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="14" selection-start="63" selection-end="63" vertical-scroll-proportion="-4.32" vertical-offset="0" max-vertical-offset="972">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tile_clone_deploy.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myproject/recipes/tile_clone_deploy.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="0" selection-start="925" selection-end="925" vertical-scroll-proportion="-24.76" vertical-offset="461" max-vertical-offset="1188">
+            <state line="9" column="21" selection-start="121" selection-end="121" vertical-scroll-proportion="0.21542554" vertical-offset="0" max-vertical-offset="1152">
               <folding />
             </state>
           </provider>
@@ -113,6 +70,7 @@
         <option value="$PROJECT_DIR$/myproject/recipes/clone_deploy.rb" />
         <option value="$PROJECT_DIR$/myproject/recipes/tile_clone_deploy.rb" />
         <option value="$PROJECT_DIR$/modvagrant/recipes/default.rb" />
+        <option value="$PROJECT_DIR$/urban4m-tiler/recipes/clone_deploy.rb" />
       </list>
     </option>
   </component>
@@ -148,6 +106,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -162,7 +121,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mycookbooks2" />
+              <option name="myItemId" value="urban4mcookbook" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -172,25 +131,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mycookbooks2" />
+              <option name="myItemId" value="urban4mcookbook" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="myproject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mycookbooks2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mycookbooks2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modvagrant" />
+              <option name="myItemId" value="urban4m-tiler" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -200,11 +145,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mycookbooks2" />
+              <option name="myItemId" value="urban4mcookbook" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modvagrant" />
+              <option name="myItemId" value="urban4m-tiler" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -214,7 +159,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -398,121 +342,30 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/myproject/metadata.rb">
+    <entry file="file://$PROJECT_DIR$/modvagrant/recipes/default.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="432">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myproject/recipes/default.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="0" selection-start="552" selection-end="552" vertical-scroll-proportion="0.0" vertical-offset="576" max-vertical-offset="1350">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myproject/recipes/folders.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="31" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="414">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myproject/metadata.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="432">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myproject/recipes/default.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="135" selection-end="170" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="1134">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myproject/recipes/folders.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="31" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="414">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myproject/metadata.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="432">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myproject/recipes/default.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="972">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myproject/recipes/folders.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="31" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="414">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myproject/metadata.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="432">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myproject/recipes/virtualenv.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="777">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myproject/recipes/default.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="1" selection-start="561" selection-end="561" vertical-scroll-proportion="-19.28" vertical-offset="76" max-vertical-offset="828">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myproject/recipes/folders.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="31" selection-start="245" selection-end="245" vertical-scroll-proportion="-7.92" vertical-offset="0" max-vertical-offset="414">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myproject/recipes/urban4m.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="164" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="252">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myproject/recipes/clone_deploy.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="14" selection-start="63" selection-end="63" vertical-scroll-proportion="-4.32" vertical-offset="0" max-vertical-offset="972">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myproject/recipes/tile_clone_deploy.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="0" selection-start="925" selection-end="925" vertical-scroll-proportion="-24.76" vertical-offset="461" max-vertical-offset="1188">
+        <state line="18" column="33" selection-start="357" selection-end="357" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="738">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modvagrant/recipes/default.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="33" selection-start="357" selection-end="357" vertical-scroll-proportion="0.44566712" vertical-offset="0" max-vertical-offset="738">
+        <state line="18" column="33" selection-start="357" selection-end="357" vertical-scroll-proportion="-12.96" vertical-offset="0" max-vertical-offset="738">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/urban4m-tiler/recipes/default.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="828">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/urban4m-tiler/recipes/clone_deploy.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="21" selection-start="121" selection-end="121" vertical-scroll-proportion="0.21542554" vertical-offset="0" max-vertical-offset="1152">
           <folding />
         </state>
       </provider>

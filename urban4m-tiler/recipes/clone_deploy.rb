@@ -7,7 +7,7 @@ include_recipe 'python'
 bash "run_pull"  do
   user "urban4m"
   code <<-EOH
-  bash /home/deploy/update.sh
+  bash /home/urban4m/deploy/update.sh
   EOH
 end
 
@@ -16,6 +16,16 @@ python_pip "/home/urban4m/deploy/urbanpy" do
   virtualenv "/home/venv-tiler"
   options '-e'
 end
+
+#restart smartmap
+bash "smartmap_restart"  do
+  user "ubuntu"
+  code <<-EOH
+  sudo service smartmap_tiler restart
+  EOH
+end
+
+
 
 
 
