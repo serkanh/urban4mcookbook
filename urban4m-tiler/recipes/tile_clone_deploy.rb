@@ -12,7 +12,7 @@ bash "run_pull"  do
 end
 
 #install application.
-python_pip "/home/urban4m/deploy/urbanpy" do
+python_pip "/home/urban4m/deploy/urban/urbanpy" do
   virtualenv "/home/urban4m/venv-tiler"
   options '-e'
 end
