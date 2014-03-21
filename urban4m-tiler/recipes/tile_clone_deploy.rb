@@ -13,7 +13,7 @@ end
 
 #install application.
 python_pip "/home/urban4m/deploy/urban/urbanpy" do
-  virtualenv "/home/urban4m/venv-tiler"
+  virtualenv ['python']['virtualenv']['path']
   options '-e'
 end
 
