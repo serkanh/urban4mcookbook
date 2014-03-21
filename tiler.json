@@ -1,0 +1,26 @@
+{
+
+  "repositories":{
+        "git":[
+               {"name":"deployment-repo-mapstyles",
+                "url":"ssh://git@10.0.0.63/git/ap/map-syles.git"},
+               {"name":"deployment-repo-tiler",
+               "url":"ssh://git@10.0.0.63/git/deployment/tiler.git"},
+               {"name":"deployment-repo-urbanpy",
+               "url":"ssh://git@10.0.0.63/git/urban/urbanpy.git"},
+               {"name":"urbanpy-repo-stash",
+               "url":"ssh://git@git.urban4m.com:7999/urban/urbanpy.git"},
+               {"name":"mapstyles-repo-stash",
+               "url":"ssh://git@git.urban4m.com:7999/ap/map-styles.git"},
+               {"name":"model-repo-stash",
+               "url":"ssh://git@git.urban4m.com:7999/ap/model.git"}
+               ]
+  }
+
+  "python":{
+        "virtualenv": {
+            "path":"/home/urban4m/venv-tiler",
+            "owner":"urban4m"
+        }
+  }
+}
