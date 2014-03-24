@@ -1,35 +1,59 @@
-#
-# Cookbook Name:: myproject
-# Recipe:: default
-#
-# Copyright 2014, YOUR_COMPANY_NAME
-#
-# All rights reserved - Do Not Redistribute
-#
-
-
-include_recipe 'build-essential'
-include_recipe 'chef_handler'
 include_recipe 'git'
-include_recipe 'dmg'
 include_recipe 'python'
 
-#create urban4m user
-#user "urban4m" do
-#  shell "/bin/bash"
-#  home "/home/urban4m"
-#  comment "Urban4M"
-#  supports :manage_home=>true
-#  action :create
+#Pull map-styles from the deployment server
+git "/home/urban4m/deploy/ap/map-styles" do
+  user "urban4m"
+  repository "ssh://git@10.0.0.63/git/ap/map-styles.git"
+  revision "master"
+  action :sync
+end
+
+#Pull model from the deployment server
+git "/home/urban4m/deploy/ap/model" do
+  user "urban4m"
+  repository "ssh://git@10.0.0.63/git/ap/model.git"
+  revision "master"
+  action :sync
+end
+
+
+#Pull urbanpy from the deployment server
+git "/home/urban4m/deploy/urban/urbanpy" do
+  user "urban4m"
+  repository "ssh://git@10.0.0.63/git/urban/urbanpy.git"
+  revision "master"
+  action :sync
+end
+
+
+
+
+#bash "run_pull"  do
+#  user "urban4m"
+#  code <<-EOH
+#  bash /home/urban4m/deploy/update.sh
+#  EOH
 #end
 
-#create ssh dir for urban4m
-#directory "/home/urban4m/.ssh" do
-#  owner "urban4m"
-#  group "urban4m"
-#  mode 0755
-#  action :create
-#end
+#install application.
+python_pip "/home/urban4m/deploy/urban/urbanpy" do
+  virtualenv "/home/urban4m/venv-tiler"
+  options '-e'
+end
+
+#restart smartmap
+bash "smartmap_restart"  do
+  user "ubuntu"
+  code <<-EOH
+  sudo service smartmap_tiler restart
+  EOH
+end
+
+
+
+
+
 
 
 
