@@ -13,7 +13,7 @@ end
 #Pull urbanpy from the deployment server
 git "/home/urban4m/deploy/urban/urbanpy" do
   user "urban4m"
-  repository "ssh://git@10.0.0.63/git/urban/urban.git"
+  repository "ssh://git@10.0.0.63/git/urban/urbanpy.git"
   revision "master"
   action :sync
 end
