@@ -1,0 +1,1 @@
+default['python']['virtualenv']['path'] = '/home/urban4m/venv-tiler'
