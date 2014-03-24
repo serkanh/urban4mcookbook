@@ -1,24 +1,25 @@
-#
-# Cookbook Name:: urban4m-db
-# Recipe:: default
-#
-# Copyright 2014, Urban4m
-#
-# All rights reserved - Do Not Redistribute
-#
-
 include_recipe 'git'
 include_recipe 'python'
 
 
-
-
-bash "run_pull"  do
+#Pull model from the deployment server
+git "/home/urban4m/deploy/ap/model" do
   user "urban4m"
-  code <<-EOH
-  bash /home/urban4m/deploy/update.sh
-  EOH
+  repository "ssh://git@10.0.0.63/git/ap/model.git"
+  revision "master"
+  action :sync
 end
+
+
+#Pull urbanpy from the deployment server
+git "/home/urban4m/deploy/urban/urbanpy" do
+  user "urban4m"
+  repository "ssh://git@10.0.0.63/git/urban/urbanpy.git"
+  revision "master"
+  action :sync
+end
+
+
 
 #install application.
 python_pip "/home/urban4m/deploy/urban/urbanpy" do
@@ -30,19 +31,10 @@ end
 bash "smartmap_restart"  do
   user "ubuntu"
   code <<-EOH
-  sudo service smartmap_web restart
   sudo service smartmap_worker restart
+  sudo service smartmap_web restart
   EOH
 end
-
-
-
-
-
-
-
-
-
 
 
 

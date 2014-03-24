@@ -9,7 +9,7 @@ git "/home/urban4m/deploy/ap/map-styles" do
   action :sync
 end
 
-#Pull map-styles from the deployment server
+#Pull model from the deployment server
 git "/home/urban4m/deploy/ap/model" do
   user "urban4m"
   repository "ssh://git@10.0.0.63/git/ap/model.git"
