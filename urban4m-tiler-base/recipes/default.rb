@@ -79,8 +79,7 @@ bash "install_common" do
 end
 
 #
-# Installs redis server.No SUDO needed
-# because of the previous line of code
+# Installs redis server.
 #
 bash "install_redis" do
   code <<-EOH
