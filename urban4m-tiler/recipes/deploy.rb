@@ -4,7 +4,7 @@ include_recipe 'python'
 #Pull map-styles from the deployment server
 git "/home/urban4m/deploy/ap/map-styles" do
   user "urban4m"
-  repository "ssh://git@10.0.0.63/git/ap/map-styles.git"
+  repository "ssh://deploy.aboutplace.co/git/ap/map-styles.git"
   revision "master"
   action :sync
 end
