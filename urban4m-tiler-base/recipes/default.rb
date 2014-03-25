@@ -44,11 +44,24 @@ execute "apt-get-update-periodic" do
   end
 end
 
+#Installs redis server.No sudo needed.
+
 bash "install_common" do
   code <<-EOH
   sudo apt-get install -y libxslt1-dev proj python-software-properties python g++ make graphviz-dev python-dev unzip openjdk-7-jre-headless
   EOH
 end
+
+#
+# Installs redis server.No SUDO needed
+# beacause of the previous line of code
+#
+bash "install_redis" do
+  code <<-EOH
+  add-apt-repository -y ppa:rwky/redis && sudo apt-get -y update && sudo apt-get install redis-server
+  EOH
+end
+
 
 #
 # Create .gitignore file in home folder
@@ -61,26 +74,84 @@ end
 bash "git_ignore_edit" do
   user "urban4m"
   code <<-EOH
-  echo -e ".bash_history
+   echo -e ".bash_history
   .bash_logout
   .distlib/
-  " >.gitignore
+  .viminfo
+  .cache
+  .ssh/
+  .sudo_ad_admin_successful
+  9.3/
+  postgis-2.1.1/
+  *.jar
+  *.zip
+  *.gz
+  *.tbz2
+  *.tar
+  *.bz2
+  ">/home/urban4m/.gitignore
   EOH
 end
 
 
+
+
+
+python_virtualenv "/home/urban4m/venv-tiler" do
+  interpreter "python2.7"
+  owner "urban4m"
+  group "urban4m"
+  action :create
+end
+
 package "curl"
 
-bash "install_pip"  do
-   user "urban4m"
-   code <<-EOH
-   sudo apt-get install curl
-   curl -L 'https://raw.github.com/pypa/pip/master/contrib/get-pip.py | sudo python'
-   EOH
+#bash "install_pip"  do
+#   user "urban4m"
+#   code <<-EOH
+#   sudo apt-get install curl
+#   curl -L 'https://raw.github.com/pypa/pip/master/contrib/get-pip.py | sudo python'
+#   EOH
+#end
+
+
+
+#pip-packages = ['uwsgi','pillow','simplejson']
+#for packg in pip-packages
+#    python_pip #{packg} do
+#      virtualenv "/home/urban4m/venv-tiler"
+#      action :install
+#    end
+
+#python_pip 'pillow' do
+#  virtualenv "/home/urban4m/venv-tiler"
+#  action :install
+#end
+
+#install application.
+#python_pip "simplejson" do
+#  user "urban4m"
+#  virtualenv "/home/urban4m/venv-tiler"
+#  options '-e'
+#end
+
+
+#
+# psycopg2 -> requires libpq-dev
+#
+bash "python_pre_reqs" do
+  code <<-EOH
+  sudo apt-get install -y libpq-dev
+  EOH
 end
 
 
-
+bash 'install_pip'do
+  user "urban4m"
+  code <<-EOH
+  source ./home/urban4m/venv-tiler/bin/activate && pip install uwsgi pillow simplejson werkzeug psycopg2 redis python-memcached blit sympy
+  EOH
+end
 
 
 
