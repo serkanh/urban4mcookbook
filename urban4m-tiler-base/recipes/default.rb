@@ -71,7 +71,7 @@ bash "install_ubuntugis" do
 end
 
 
-#Installs redis server.No sudo needed.
+#Installs redis server.
 bash "install_common" do
   code <<-EOH
   sudo apt-get install -y libxslt1-dev proj python-software-properties python python-dev postgresql-client-9.3 g++ make graphviz-dev unzip openjdk-7-jre-headless
