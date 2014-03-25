@@ -25,12 +25,12 @@ include_recipe 'python'
 
 
 #create urban4m user
-user "urban4m" do
-  supports :manage_home=>true
-  comment "Urban4m User"
-  home "/home/urban4m"
-  shell "/bin/bash"
-end
+#user "urban4m" do
+#  supports :manage_home=>true
+#  comment "Urban4m User"
+#  home "/home/urban4m"
+#  shell "/bin/bash"
+#end
 
 
 
