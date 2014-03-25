@@ -2,7 +2,7 @@
 # Cookbook Name:: Tiler Base Server Setup
 # Recipe:: default
 #
-# Copyright 2014, YOUR_COMPANY_NAME
+# Copyright 2014, Urban4m
 #
 # All rights reserved - Do Not Redistribute
 #
@@ -44,8 +44,22 @@ execute "apt-get-update-periodic" do
   end
 end
 
-#Installs redis server.No sudo needed.
+#Installs Postgresql
+bash "install_postgres" do
+  code <<-EOH
+  curl -L 'http://anonscm.debian.org/loggerhead/pkg-postgresql/postgresql-common/trunk/download/head:/apt.postgresql.org.s-20130224224205-px3qyst90b3xp8zj-1/apt.postgresql.org.sh' |  sudo bash -
+  EOH
+end
 
+#Installs Ubuntugis
+bash "install_ubuntugis" do
+  code <<-EOH
+  sudo add-apt-repository -y ppa:ubuntugis/ubuntugis-unstable && sudo apt-get -y update && sudo apt-get install -y gdal-bin libgdal-dev
+  EOH
+end
+
+
+#Installs redis server.No sudo needed.
 bash "install_common" do
   code <<-EOH
   sudo apt-get install -y libxslt1-dev proj python-software-properties python g++ make graphviz-dev python-dev unzip openjdk-7-jre-headless
@@ -54,7 +68,7 @@ end
 
 #
 # Installs redis server.No SUDO needed
-# beacause of the previous line of code
+# because of the previous line of code
 #
 bash "install_redis" do
   code <<-EOH
@@ -95,8 +109,6 @@ end
 
 
 
-
-
 python_virtualenv "/home/urban4m/venv-tiler" do
   interpreter "python2.7"
   owner "urban4m"
@@ -114,42 +126,63 @@ package "curl"
 #   EOH
 #end
 
+#
+# Installs ImageMagick - Optional package to
+# build docs for postgis.Added for testing purposes.
+#
+bash "install_imagemagick" do
+  code <<-EOH
+  sudo apt-get install -y imagemagick
+  EOH
+end
 
 
-#pip-packages = ['uwsgi','pillow','simplejson']
-#for packg in pip-packages
-#    python_pip #{packg} do
-#      virtualenv "/home/urban4m/venv-tiler"
-#      action :install
-#    end
+#
+# Get Postgis
+#
+bash "get_postgis" do
+  cwd "/home/urban4m/"
+  code <<-EOH
+  curl -OLs "http://download.osgeo.org/postgis/source/postgis-2.1.1.tar.gz"
+  EOH
+end
 
-#python_pip 'pillow' do
-#  virtualenv "/home/urban4m/venv-tiler"
-#  action :install
-#end
+#
+# Extract Postgis
+#
+bash "download_extract_postgis" do
+  cwd "/home/urban4m/"
+  code <<-EOH
+  tar zxf postgis-2.1.1.tar.gz
+  EOH
+end
 
-#install application.
-#python_pip "simplejson" do
-#  user "urban4m"
-#  virtualenv "/home/urban4m/venv-tiler"
-#  options '-e'
-#end
+#
+# Install Postgis
+#
+bash "install_postgis" do
+  cwd "/home/urban4m/postgis-2.1.1"
+  code <<-EOH
+  sudo ./configure && make && make install
+  EOH
+end
 
 
 #
 # psycopg2 -> requires libpq-dev
 #
-bash "python_pre_reqs" do
+bash "python_libs_pre_reqs" do
   code <<-EOH
   sudo apt-get install -y libpq-dev
   EOH
 end
 
 
-bash 'install_pip'do
+bash 'install_python_libs'do
   user "urban4m"
   code <<-EOH
   source ./home/urban4m/venv-tiler/bin/activate && pip install uwsgi pillow simplejson werkzeug psycopg2 redis python-memcached blit sympy
+  source ./home/urban4m/venv-tiler/bin/activate && pip install --allow-all-external --allow-unverified pyproj pyproj
   EOH
 end
 
