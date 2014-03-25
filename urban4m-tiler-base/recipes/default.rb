@@ -23,6 +23,17 @@ include_recipe 'dmg'
 include_recipe 'python'
 
 
+
+#create urban4m user
+user "urban4m" do
+  supports :manage_home=>true
+  comment "Urban4m User"
+  home "/home/urban4m"
+  shell "/bin/bash"
+end
+
+
+
 #Runs apt-get to update repos
 execute "apt-get-update" do
   command "apt-get update"
@@ -48,6 +59,7 @@ end
 bash "install_postgres" do
   code <<-EOH
   curl -L 'http://anonscm.debian.org/loggerhead/pkg-postgresql/postgresql-common/trunk/download/head:/apt.postgresql.org.s-20130224224205-px3qyst90b3xp8zj-1/apt.postgresql.org.sh' |  sudo bash -
+  sudo apt-get install -y postgresql-server-dev-9.3
   EOH
 end
 
@@ -62,7 +74,7 @@ end
 #Installs redis server.No sudo needed.
 bash "install_common" do
   code <<-EOH
-  sudo apt-get install -y libxslt1-dev proj python-software-properties python g++ make graphviz-dev python-dev unzip openjdk-7-jre-headless
+  sudo apt-get install -y libxslt1-dev proj python-software-properties python python-dev postgresql-client-9.3 g++ make graphviz-dev unzip openjdk-7-jre-headless
   EOH
 end
 
@@ -177,8 +189,8 @@ bash "python_libs_pre_reqs" do
   EOH
 end
 
-
-bash 'install_python_libs'do
+#Install python libraries
+bash 'install_python_libs' do
   user "urban4m"
   code <<-EOH
   source ./home/urban4m/venv-tiler/bin/activate && pip install uwsgi pillow simplejson werkzeug psycopg2 redis python-memcached blit sympy
@@ -188,5 +200,21 @@ end
 
 
 
+bash 'install_gdal' do
+  code <<-EOH
+  export CPLUS_INCLUDE_PATH="/usr/include/gdal"
+  export C_INLUDE_PATH="/usr/include/gdal"
+  sudo -E pip install gdal
+  EOH
+end
+
+
+bash 'install_mapnik' do
+  code <<-EOH
+  source ./home/urban4m/venv-tiler/bin/activate && sudo pip install --allow-all-external --allow-unverified ModestMaps ModestMaps
+  sudo add-apt-repository -y ppa:mapnik/v2.2.0 && sudo apt-get -y update
+  sudo apt-get install -y libmapnik libmapnik-dev mapnik-utils python-mapnik
+  EOH
+end
 
 
