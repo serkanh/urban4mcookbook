@@ -22,15 +22,16 @@ include_recipe 'git'
 include_recipe 'dmg'
 include_recipe 'python'
 
+package "curl"
 
 
 #create urban4m user
-#user "urban4m" do
-#  supports :manage_home=>true
-#  comment "Urban4m User"
-#  home "/home/urban4m"
-#  shell "/bin/bash"
-#end
+user "urban4m" do
+  supports :manage_home=>true
+  comment "Urban4m User"
+  home "/home/urban4m"
+  shell "/bin/bash"
+end
 
 
 
@@ -127,7 +128,7 @@ python_virtualenv "/home/urban4m/venv-tiler" do
   action :create
 end
 
-package "curl"
+
 
 #bash "install_pip"  do
 #   user "urban4m"
@@ -199,18 +200,22 @@ end
 
 
 
+#
+# Set Env variables and install gdal
+#
 bash 'install_gdal' do
   code <<-EOH
-  export CPLUS_INCLUDE_PATH="/usr/include/gdal"
-  export C_INLUDE_PATH="/usr/include/gdal"
-  sudo -E pip install gdal
+  source ./home/urban4m/venv-tiler/bin/activate && sudo -E pip install gdal
   EOH
+  environment ({ 'C_INCLUDE_PATH'=>"/usr/include/gdal", 'CPLUS_INCLUDE_PATH'=>"/usr/include/gdal" })
 end
 
-
+#
+# Install Mapnik
+#
 bash 'install_mapnik' do
   code <<-EOH
-  source ./home/urban4m/venv-tiler/bin/activate && sudo pip install --allow-all-external --allow-unverified ModestMaps ModestMaps
+  source ./home/urban4m/venv-tiler/bin/activate && sudo pip install -y --allow-all-external --allow-unverified ModestMaps ModestMaps
   sudo add-apt-repository -y ppa:mapnik/v2.2.0 && sudo apt-get -y update
   sudo apt-get install -y libmapnik libmapnik-dev mapnik-utils python-mapnik
   EOH
